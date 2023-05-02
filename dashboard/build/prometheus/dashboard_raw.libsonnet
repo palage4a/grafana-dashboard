@@ -10,6 +10,7 @@ function(
   alias,
   title='',
   sections=[],
+  labels=null,
 ) std.foldl(
   function(_dashboard, _s) (
     _dashboard.addPanels(section[_s](
@@ -17,6 +18,7 @@ function(
       datasource=datasource,
       job=job,
       alias=alias,
+      labels=labels,
     ))
   ),
   sections,

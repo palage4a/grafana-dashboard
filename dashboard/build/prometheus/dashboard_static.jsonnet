@@ -3,6 +3,7 @@ local grafana = import 'grafonnet/grafana.libsonnet';
 
 local dashboard_raw = import 'dashboard/build/prometheus/dashboard_raw.libsonnet';
 local variable = import 'dashboard/variable.libsonnet';
+local utils = import 'dashboard/utils.libsonnet';
 
 local DATASOURCE = std.extVar('DATASOURCE');
 local JOB = std.extVar('JOB');
@@ -14,6 +15,7 @@ local sections = if SECTIONS != null && SECTIONS != "" then
                    std.split(SECTIONS, ',')
                  else
                    ['cluster_prometheus', 'replication', 'http', 'net', 'slab', 'mvcc', 'space', 'vinyl', 'cpu', 'luajit', 'operations', 'crud', 'expirationd'];
+local LABELS = if std.extVar('LABELS') != '' then utils.parseLabels(std.extVar('LABELS')) else {};
 
 if WITH_INSTANCE_VARIABLE then
   dashboard_raw(
@@ -22,11 +24,12 @@ if WITH_INSTANCE_VARIABLE then
     alias=variable.prometheus.alias,
     title=TITLE,
     sections=sections,
+    labels=LABELS,
   ).addTemplate(
     grafana.template.new(
       name='alias',
       datasource=DATASOURCE,
-      query=std.format('label_values(%s{job="%s"},alias)', [variable.metrics.tarantool_indicator, JOB]),
+      query=std.format('label_values(%s{job="%s", %s},alias)', [variable.metrics.tarantool_indicator, JOB, utils.generate_labels_string(LABELS)]),
       includeAll=true,
       multi=true,
       current='all',
@@ -41,4 +44,5 @@ else
     alias='.*',
     title=TITLE,
     sections=sections,
+    labels=LABELS,
   ).build()
