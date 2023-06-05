@@ -139,5 +139,36 @@
         },
       },
     },
+
+    addAlert(
+      name,
+      executionErrorState='alerting',
+      forDuration='5m',
+      frequency='60s',
+      handler=1,
+      message='',
+      noDataState='no_data',
+      notifications=[],
+      alertRuleTags={},
+    ):: self {
+      local it = self,
+      _conditions:: [],
+      alert: {
+        name: name,
+        conditions: it._conditions,
+        executionErrorState: executionErrorState,
+        'for': forDuration,
+        frequency: frequency,
+        handler: handler,
+        noDataState: noDataState,
+        notifications: notifications,
+        message: message,
+        alertRuleTags: alertRuleTags,
+      },
+      addCondition(condition):: self {
+        _conditions+: [condition],
+      },
+      addConditions(conditions):: std.foldl(function(p, c) p.addCondition(c), conditions, it),
+    },
   },
 }
