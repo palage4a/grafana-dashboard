@@ -68,7 +68,12 @@ local influxdb_query_filters(filters) = std.join(' AND ', std.map(
     addAlert(
       alert
     ):: self {
-      alert: alert,
+      alert: {
+        alertRuleTags: [],
+        executionErrorState: "keep_state",
+        handler: 1,
+        noDataState: "keep_state",
+      } + alert,
     },
   },
 
