@@ -7,6 +7,7 @@ local influxdb = grafana.influxdb;
 local prometheus = grafana.prometheus;
 
 {
+  # NOTE: exclude from `addAlert` iteration
   row:: common.row('Tarantool MVCC overview'),
 
   local mvcc_warning(description) = std.join(

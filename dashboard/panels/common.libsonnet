@@ -63,7 +63,14 @@ local influxdb_query_filters(filters) = std.join(' AND ', std.map(
     legend_values=true,
     legend_sort='current',
     legend_sortDesc=true,
-  ) { gridPos: { w: panel_width, h: panel_height } },
+  ) {
+    gridPos: {w: panel_width, h: panel_height },
+    addAlert(
+      alert
+    ):: self {
+      alert: alert,
+    },
+  },
 
   row(title):: grafana.row.new(title, collapse=true) { gridPos: { w: 24, h: 1 } },
 

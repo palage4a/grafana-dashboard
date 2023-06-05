@@ -182,7 +182,7 @@ local vinyl = import 'dashboard/panels/vinyl.libsonnet';
 
   cpu(cfg):: [
     cpu.row,
-    cpu.getrusage_cpu_user_time(cfg),
+    cpu.getrusage_cpu_user_time(cfg).addAlert(cfg.alerts['getrusage_cpu_user_time']),
     cpu.getrusage_cpu_system_time(cfg),
   ],
 

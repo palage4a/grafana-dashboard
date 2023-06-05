@@ -1,0 +1,47 @@
+type: prometheus
+datasource: 'Prometheus (prod)'
+metrics_prefix: 'prometheus_'
+description: Dashboard for Tarantool application and database server monitoring, based on grafonnet library.
+grafana_tags: [tarantool]
+filters: {
+  application: ['=~', 'rtm-promocode-app'],
+  stand: ['=', 'WF'],
+}
+sections:
+  - cluster
+  - cpu
+
+
+title: Tarantool Dashboard
+
+alerts:
+  getrusage_cpu_user_time:
+    name: test alert
+    alertRuleTags:
+    executionErrorState: keep_state
+    for: 5m
+    frequency: 5m
+    handler: 1 # +
+    message: Bad requests / All requests ratio exceeded
+    noDataState: keep_state
+    notifications:
+      - uid: zVZ-YmoVz
+    conditions:
+      - evaluator:
+          params:
+            - 0.05
+          type: gt
+          operator:
+            type: and
+          query:
+            params:
+              - A
+              - 10m
+              - now
+          reducer:
+            params:
+            type: avg
+          type: query
+
+
+
