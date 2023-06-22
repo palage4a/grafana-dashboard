@@ -10,7 +10,6 @@ local prometheus = grafana.prometheus;
 
 {
   row:: common.row('Replication overview'),
-
   replication_status(
     cfg,
     title='Tarantool replication status',
@@ -20,7 +19,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and Grafana 8.x.
     |||,
-  ):: timeseries.new(
+  ): timeseries.new(
     title=title,
     description=description,
     datasource=cfg.datasource,
@@ -54,7 +53,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -86,7 +85,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.10.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -123,7 +122,7 @@ local prometheus = grafana.prometheus;
     description=syncro_warning(|||
       Instance ID of the current synchronous replication master.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -142,7 +141,7 @@ local prometheus = grafana.prometheus;
     description=syncro_warning(|||
       Current queue term.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -161,7 +160,7 @@ local prometheus = grafana.prometheus;
     description=syncro_warning(|||
       Count of transactions collecting confirmations now.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -179,7 +178,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Grafana 8.x.
     |||),
-  ):: timeseries.new(
+  ): timeseries.new(
     title=title,
     description=description,
     datasource=cfg.datasource,

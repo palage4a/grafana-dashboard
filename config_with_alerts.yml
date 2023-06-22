@@ -4,19 +4,16 @@ datasource: 'Prometheus (prod)'
 description: Dashboard for Tarantool application and database server monitoring, based on grafonnet library.
 grafana_tags: [tarantool]
 sections:
-  - cluster
-  - cpu
+  - replication
 
 title: UCP Tarantool Dashboard
 
 alerts:
-  getrusage_cpu_user_time:
+  replication_status:
     name: test alert
     for: 5m
     frequency: 5m
-    message: Bad requests / All requests ratio exceeded
-    notifications:
-      - uid: zVZ-YmoVz
+    message: test alert exploded
     conditions:
       - evaluator:
           params:

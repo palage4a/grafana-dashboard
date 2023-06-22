@@ -26,6 +26,20 @@ local tdg_tasks = import 'dashboard/panels/tdg/tasks.libsonnet';
 local tdg_tuples = import 'dashboard/panels/tdg/tuples.libsonnet';
 local vinyl = import 'dashboard/panels/vinyl.libsonnet';
 
+local sections = {
+  replication: replication,
+};
+
+local buildSection(name, cfg) =
+  local s = std.get(sections, name, null);
+  if s != null then
+    std.map(function(ss)
+              if 'alerts' in cfg && ss.key in cfg.alerts then
+                ss.value(cfg).addAlert(cfg.alerts[ss.key])
+              else
+                ss.value(cfg),
+            std.objectKeysValues(s));
+
 {
   cluster(cfg):: if cfg.type == variable.datasource_type.prometheus then [
     // Must be used only in the top of a dashboard, overall stat panels use complicated layout
@@ -57,16 +71,7 @@ local vinyl = import 'dashboard/panels/vinyl.libsonnet';
     cluster.election_term(cfg),
   ],
 
-  replication(cfg):: [
-    replication.row,
-    replication.replication_status(cfg),
-    replication.replication_lag(cfg),
-    replication.clock_delta(cfg),
-    replication.synchro_queue_owner(cfg),
-    replication.synchro_queue_term(cfg),
-    replication.synchro_queue_length(cfg),
-    replication.synchro_queue_busy(cfg),
-  ],
+  replication(cfg):: [replication.row] + buildSection('replication', cfg),
 
   http(cfg):: [
     http.row,
