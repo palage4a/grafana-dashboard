@@ -3,10 +3,6 @@ datasource: 'Prometheus (prod)'
 # metrics_prefix: 'prometheus_'
 description: Dashboard for Tarantool application and database server monitoring, based on grafonnet library.
 grafana_tags: [tarantool]
-# filters: {
-#   application: ['=~', 'rtm-promocode-app'],
-#   stand: ['=', 'WF'],
-# }
 sections:
   - cluster
   - cpu
