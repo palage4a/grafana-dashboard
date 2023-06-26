@@ -149,9 +149,9 @@ local fill_templates(cfg, dashboard_template) = std.foldl(
   dashboard_template
 );
 
-function(cfg) std.foldl(
+function(cfg, sections=section) std.foldl(
   function(dashboard, key)
-    dashboard.addPanels(section[key](cfg)),
+    dashboard.addPanels(sections[key](cfg)),
   cfg.sections,
   dashboard.new(
     // TODO: requirements based on cfg.sections
