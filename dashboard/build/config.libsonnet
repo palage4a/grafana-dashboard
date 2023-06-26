@@ -139,10 +139,7 @@ local variable = import 'dashboard/variable.libsonnet';
       validate_filter(item.key, item.value)
       for item in std.objectKeysValues(cfg.filters)
     ]) + [
-      if (item in section) == false then
-        error std.format("ConfigurationError: configuration unknown sections value '%s'", [item])
-      else
-        true
+      true
       for item in cfg.sections
     ] + [
       assert_type('', item, 'string', "ConfigurationError: field 'grafana_tags%s' values expected type %s, got %s")
