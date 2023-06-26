@@ -398,7 +398,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_rps_select(
+  ): operation_rps_select(
     cfg,
     title=title,
     description=description,
@@ -409,7 +409,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_latency_select(
+  ): operation_latency_select(
     cfg,
     title=title,
     description=description,
@@ -420,7 +420,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_rps_select(
+  ): operation_rps_select(
     cfg,
     title=title,
     description=description,
@@ -431,7 +431,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_latency_select(
+  ): operation_latency_select(
     cfg,
     title=title,
     description=description,
@@ -445,7 +445,7 @@ local module = {
       Average number of tuples fetched during SELECT/PAIRS request for a space.
       Both success and error requests are taken into consideration.
     |||,
-  ):: tuples_panel(
+  ): tuples_panel(
     cfg,
     title=title,
     description=description,
@@ -460,7 +460,7 @@ local module = {
       for SELECT/PAIRS requests (including scrolls for multibatch requests)
       for a space. Both success and error requests are taken into consideration.
     |||,
-  ):: tuples_panel(
+  ): tuples_panel(
     cfg,
     title=title,
     description=description,
@@ -475,7 +475,7 @@ local module = {
       Graph shows average requests per second.
       Both success and error requests are taken into consideration.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -508,7 +508,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_rps_borders(
+  ): operation_rps_borders(
     cfg,
     title=title,
     description=description,
@@ -519,7 +519,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_latency_borders(
+  ): operation_latency_borders(
     cfg,
     title=title,
     description=description,
@@ -530,7 +530,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_rps_borders(
+  ): operation_rps_borders(
     cfg,
     title=title,
     description=description,
@@ -541,7 +541,7 @@ local module = {
     cfg,
     title=null,
     description=null,
-  ):: operation_latency_borders(
+  ): operation_latency_borders(
     cfg,
     title=title,
     description=description,
@@ -560,7 +560,7 @@ local module_with_object_panels = std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_rps_object(
+    ): operation_rps_object(
       cfg,
       title=title,
       description=description,
@@ -572,7 +572,7 @@ local module_with_object_panels = std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_latency_object(
+    ): operation_latency_object(
       cfg,
       title=title,
       description=description,
@@ -584,7 +584,7 @@ local module_with_object_panels = std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_rps_object(
+    ): operation_rps_object(
       cfg,
       title=title,
       description=description,
@@ -596,7 +596,7 @@ local module_with_object_panels = std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_latency_object(
+    ): operation_latency_object(
       cfg,
       title=title,
       description=description,
@@ -613,7 +613,7 @@ local module_with_object_and_many_panels = std.foldl(function(_module, operation
       cfg,
       title=null,
       description=null,
-    ):: operation_rps_object_many(
+    ): operation_rps_object_many(
       cfg,
       title=title,
       description=description,
@@ -625,7 +625,7 @@ local module_with_object_and_many_panels = std.foldl(function(_module, operation
       cfg,
       title=null,
       description=null,
-    ):: operation_latency_object_many(
+    ): operation_latency_object_many(
       cfg,
       title=title,
       description=description,
@@ -637,7 +637,7 @@ local module_with_object_and_many_panels = std.foldl(function(_module, operation
       cfg,
       title=null,
       description=null,
-    ):: operation_rps_object_many(
+    ): operation_rps_object_many(
       cfg,
       title=title,
       description=description,
@@ -649,7 +649,7 @@ local module_with_object_and_many_panels = std.foldl(function(_module, operation
       cfg,
       title=null,
       description=null,
-    ):: operation_latency_object_many(
+    ): operation_latency_object_many(
       cfg,
       title=title,
       description=description,
@@ -666,7 +666,7 @@ std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_rps(
+    ): operation_rps(
       cfg,
       title=title,
       description=description,
@@ -678,7 +678,7 @@ std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_latency(
+    ): operation_latency(
       cfg,
       title=title,
       description=description,
@@ -690,7 +690,7 @@ std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_rps(
+    ): operation_rps(
       cfg,
       title=title,
       description=description,
@@ -702,7 +702,7 @@ std.foldl(function(_module, operation) (
       cfg,
       title=null,
       description=null,
-    ):: operation_latency(
+    ): operation_latency(
       cfg,
       title=title,
       description=description,

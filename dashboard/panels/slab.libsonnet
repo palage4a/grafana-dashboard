@@ -62,7 +62,7 @@ local common = import 'dashboard/panels/common.libsonnet';
 
       `quota_size` – memory limit for slab allocator (as configured in the *memtx_memory* parameter).
     |||,
-  ):: used_ratio(
+  ): used_ratio(
     cfg,
     title=title,
     description=description,
@@ -79,7 +79,7 @@ local common = import 'dashboard/panels/common.libsonnet';
 
       `arena_size` – allocated for both tuples and indexes.
     |||,
-  ):: used_ratio(
+  ): used_ratio(
     cfg,
     title=title,
     description=description,
@@ -96,7 +96,7 @@ local common = import 'dashboard/panels/common.libsonnet';
 
       `items_size` – allocated only for tuples.
     |||,
-  ):: used_ratio(
+  ): used_ratio(
     cfg,
     title=title,
     description=description,
@@ -123,7 +123,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory used by slab allocator (for both tuple and index slabs).
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,
@@ -136,7 +136,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory limit for slab allocator (as configured in the *memtx_memory* parameter).
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,
@@ -149,7 +149,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory used for both tuples and indexes.
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,
@@ -162,7 +162,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory allocated for both tuples and indexes by slab allocator.
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,
@@ -175,7 +175,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory used for only tuples.
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,
@@ -188,7 +188,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory allocated for only tuples by slab allocator.
     |||,
-  ):: used_memory(
+  ): used_memory(
     cfg,
     title=title,
     description=description,

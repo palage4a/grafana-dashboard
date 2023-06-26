@@ -45,7 +45,7 @@ local prometheus = grafana.prometheus;
       Graph shows mean count per second.
     |||,
     metric_name='http_server_request_latency_count',
-  ):: rps_graph(
+  ): rps_graph(
     cfg,
     title=title,
     description=description,
@@ -61,7 +61,7 @@ local prometheus = grafana.prometheus;
       Graph shows mean count per second.
     |||,
     metric_name='http_server_request_latency_count',
-  ):: rps_graph(
+  ): rps_graph(
     cfg,
     title=title,
     description=description,
@@ -77,7 +77,7 @@ local prometheus = grafana.prometheus;
       Graph shows mean count per second.
     |||,
     metric_name='http_server_request_latency_count',
-  ):: rps_graph(
+  ): rps_graph(
     cfg,
     title=title,
     description=description,
@@ -133,7 +133,7 @@ local prometheus = grafana.prometheus;
     metric_name='http_server_request_latency',
     quantile='0.99',
     label='99th percentile',
-  ):: latency_graph(
+  ): latency_graph(
     cfg,
     title=title,
     description=description,
@@ -154,7 +154,7 @@ local prometheus = grafana.prometheus;
     metric_name='http_server_request_latency',
     quantile='0.99',
     label='99th percentile',
-  ):: latency_graph(
+  ): latency_graph(
     cfg,
     title=title,
     description=description,
@@ -175,7 +175,7 @@ local prometheus = grafana.prometheus;
     metric_name='http_server_request_latency',
     quantile='0.99',
     label='99th percentile',
-  ):: latency_graph(
+  ): latency_graph(
     cfg,
     title=title,
     description=description,

@@ -34,7 +34,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: disk_size(
+  ): disk_size(
     cfg,
     title=title,
     description=description,
@@ -49,7 +49,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: disk_size(
+  ): disk_size(
     cfg,
     title=title,
     description=description,
@@ -64,7 +64,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -85,7 +85,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -102,7 +102,7 @@ local prometheus = grafana.prometheus;
     description=|||
       Amount of memory in bytes used by bloom filters.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -140,7 +140,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: regulator_bps(
+  ): regulator_bps(
     cfg,
     title=title,
     description=description,
@@ -157,7 +157,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: regulator_bps(
+  ): regulator_bps(
     cfg,
     title=title,
     description=description,
@@ -175,7 +175,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: regulator_bps(
+  ): regulator_bps(
     cfg,
     title=title,
     description=description,
@@ -196,7 +196,7 @@ local prometheus = grafana.prometheus;
       Panel works with `metrics >= 0.8.0`.
     |||,
 
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -220,7 +220,7 @@ local prometheus = grafana.prometheus;
       Panel works with `metrics >= 0.8.0`.
     |||,
 
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -240,7 +240,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and `Tarantool >= 2.8.3`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -278,7 +278,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: tx_rate(
+  ): tx_rate(
     cfg,
     title=title,
     description=description,
@@ -294,7 +294,7 @@ local prometheus = grafana.prometheus;
       that ended with errors.
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: tx_rate(
+  ): tx_rate(
     cfg,
     title=title,
     description=description,
@@ -311,7 +311,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: tx_rate(
+  ): tx_rate(
     cfg,
     title=title,
     description=description,
@@ -329,7 +329,7 @@ local prometheus = grafana.prometheus;
       Panel works with `metrics >= 0.8.0`.
     |||,
 
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -366,7 +366,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: memory(
+  ): memory(
     cfg,
     title=title,
     description=description,
@@ -382,7 +382,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: memory(
+  ): memory(
     cfg,
     title=title,
     description=description,
@@ -397,7 +397,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -425,7 +425,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -454,7 +454,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.8.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -474,7 +474,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,

@@ -100,6 +100,7 @@ local variable = import 'dashboard/variable.libsonnet';
       filters: 'object',
       metrics_prefix: 'string',
       sections: 'array',
+      alerts: 'object',
     },
   },
 

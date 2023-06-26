@@ -143,7 +143,12 @@
     addAlert(
       alert
     ):: self {
-      alert: alert,
+      alert: {
+        alertRuleTags: [],
+        executionErrorState: "keep_state",
+        handler: 1,
+        noDataState: "keep_state",
+      } + alert,
     },
   },
 }

@@ -9,9 +9,9 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Memory used for objects allocated with Lua
       by using its internal mechanisms.
-      Lua memory is bounded by 2 GB per instance. 
+      Lua memory is bounded by 2 GB per instance.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -33,7 +33,7 @@ local common = import 'dashboard/panels/common.libsonnet';
       Lua mechanisms (spaces data and indexes
       are not included here, see memtx/vinyl arena).
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -53,9 +53,9 @@ local common = import 'dashboard/panels/common.libsonnet';
       Memory in use by active transactions.
       For the vinyl storage engine, this is the total size of
       all allocated objects (struct txv, struct vy_tx, struct vy_read_interval)
-      and tuples pinned for those objects. 
+      and tuples pinned for those objects.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -70,11 +70,11 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title='Number of fibers',
     description=|||
-      Current number of fibers in tx thread. 
+      Current number of fibers in tx thread.
 
       Panel works with `metrics >= 0.13.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -92,7 +92,7 @@ local common = import 'dashboard/panels/common.libsonnet';
       Number of fiber context switches.
       Context switches are counted over all current fibers.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -123,7 +123,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Amount of memory used by current fibers.
     |||,
-  ):: fiber_memory(
+  ): fiber_memory(
     cfg,
     title,
     description,
@@ -136,7 +136,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Amount of memory reserved for current fibers.
     |||,
-  ):: fiber_memory(
+  ): fiber_memory(
     cfg,
     title,
     description,
@@ -154,7 +154,7 @@ local common = import 'dashboard/panels/common.libsonnet';
 
       Panel works with `metrics >= 0.13.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,

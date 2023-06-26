@@ -16,7 +16,7 @@ local common = import 'dashboard/panels/common.libsonnet';
       Average number of snap restores (guard assertions
       leading to stopping trace executions) per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),
@@ -32,7 +32,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average number of new JIT traces per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning(description),
@@ -48,7 +48,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average number of JIT trace aborts per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),
@@ -64,7 +64,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Total size of allocated machine code areas.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning(description),
@@ -81,7 +81,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average number of strings being extracted from hash instead of allocating per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),
@@ -97,7 +97,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average number of strings being allocated due to hash miss per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),
@@ -132,7 +132,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -143,7 +143,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -154,7 +154,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -165,7 +165,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -176,7 +176,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -187,7 +187,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     cfg,
     title=null,
     description=null,
-  ):: gc_steps(
+  ): gc_steps(
     cfg,
     title,
     description,
@@ -215,7 +215,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Number of allocated string objects.
     |||,
-  ):: allocated(
+  ): allocated(
     cfg,
     title,
     description,
@@ -228,7 +228,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Number of allocated table objects.
     |||,
-  ):: allocated(
+  ): allocated(
     cfg,
     title,
     description,
@@ -241,7 +241,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Number of allocated cdata objects.
     |||,
-  ):: allocated(
+  ): allocated(
     cfg,
     title,
     description,
@@ -254,7 +254,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Number of allocated userdata objects.
     |||,
-  ):: allocated(
+  ): allocated(
     cfg,
     title,
     description,
@@ -267,7 +267,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Current allocated Lua memory.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning(description),
@@ -284,7 +284,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average amount of freed Lua memory per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),
@@ -301,7 +301,7 @@ local common = import 'dashboard/panels/common.libsonnet';
     description=|||
       Average amount of allocated Lua memory per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=version_warning_renamed(description),

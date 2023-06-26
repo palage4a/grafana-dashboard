@@ -53,7 +53,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -64,7 +64,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -75,7 +75,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -86,7 +86,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -97,7 +97,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -108,7 +108,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title=null,
     description=null,
-  ):: space_operation_rps(
+  ): space_operation_rps(
     cfg,
     title=title,
     description=description,
@@ -122,7 +122,7 @@ local prometheus = grafana.prometheus;
       Requests to execute stored procedures.
       Graph shows average requests per second.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -137,7 +137,7 @@ local prometheus = grafana.prometheus;
       Calls to evaluate Lua code.
       Graph shows average requests per second.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -152,7 +152,7 @@ local prometheus = grafana.prometheus;
       Requests resulted in error.
       Graph shows average errors per second.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -167,7 +167,7 @@ local prometheus = grafana.prometheus;
       Authentication requests.
       Graph shows average requests per second.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -184,7 +184,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Tarantool 2.x.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -201,7 +201,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Tarantool 2.x.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -220,7 +220,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Tarantool 2.10 or newer.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -239,7 +239,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Tarantool 2.10 or newer.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,
@@ -258,7 +258,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Tarantool 2.10 or newer.
     |||,
-  ):: operation_rps(
+  ): operation_rps(
     cfg,
     title=title,
     description=description,

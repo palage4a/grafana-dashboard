@@ -46,7 +46,7 @@ local prometheus = grafana.prometheus;
       Graph shows the number of bytes that are allocated
       for the statements of all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -64,7 +64,7 @@ local prometheus = grafana.prometheus;
       Graph shows average bytes used by transactions for statements
       (`txn.statements.total` bytes / number of open transactions).
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -82,7 +82,7 @@ local prometheus = grafana.prometheus;
       Graph shows the maximum number of bytes used by one
       the current transaction for statements.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -107,7 +107,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(txn_user_desc(|||
       Graph shows memory allocated for all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -125,7 +125,7 @@ local prometheus = grafana.prometheus;
       Graph shows transaction average
       (total allocated bytes / number of all current transactions).
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -142,7 +142,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(txn_user_desc(|||
       Graph shows the maximum number of bytes allocated over all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -167,7 +167,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(txn_system_desc(|||
       Graph shows memory allocated for all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -185,7 +185,7 @@ local prometheus = grafana.prometheus;
       Graph shows transaction average
       (total allocated bytes / number of all current transactions).
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -202,7 +202,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(txn_system_desc(|||
       Graph shows the maximum number of bytes allocated over all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -227,7 +227,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(mvcc_trackers_desc(|||
       Graph shows memory allocated for trackers of all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -245,7 +245,7 @@ local prometheus = grafana.prometheus;
       Graph shows transaction tracker average
       (total allocated bytes / number of all current transactions).
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -263,7 +263,7 @@ local prometheus = grafana.prometheus;
       Graph shows the maximum number of bytes allocated for a tracker
       over all current transactions.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -287,7 +287,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(mvcc_conflicts_desc(|||
       Graph shows memory allocated for all current conflicts.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -305,7 +305,7 @@ local prometheus = grafana.prometheus;
       Graph shows transaction conflict average
       (total allocated bytes / number of all current conflict).
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -322,7 +322,7 @@ local prometheus = grafana.prometheus;
     description=mvcc_warning(mvcc_conflicts_desc(|||
       Graph shows the maximum number of bytes allocated for a transaction conflict.
     |||)),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -378,7 +378,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples used',
     description=mvcc_warning(mvcc_stories_desc(mvcc_used_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -393,7 +393,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples used size',
     description=mvcc_warning(mvcc_stories_desc(mvcc_used_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -408,7 +408,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples used',
     description=mvcc_warning(mvcc_retained_desc(mvcc_used_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -423,7 +423,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples used size',
     description=mvcc_warning(mvcc_retained_desc(mvcc_used_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -438,7 +438,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples in read views',
     description=mvcc_warning(mvcc_stories_desc(mvcc_read_view_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -453,7 +453,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples in read views size',
     description=mvcc_warning(mvcc_stories_desc(mvcc_read_view_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -468,7 +468,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples in read views',
     description=mvcc_warning(mvcc_retained_desc(mvcc_read_view_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -483,7 +483,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples in read views size',
     description=mvcc_warning(mvcc_retained_desc(mvcc_read_view_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -498,7 +498,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples tracked',
     description=mvcc_warning(mvcc_stories_desc(mvcc_tracking_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -513,7 +513,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Stories tuples tracked size',
     description=mvcc_warning(mvcc_stories_desc(mvcc_tracking_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -528,7 +528,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples tracked',
     description=mvcc_warning(mvcc_retained_desc(mvcc_tracking_desc(count_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -543,7 +543,7 @@ local prometheus = grafana.prometheus;
     cfg,
     title='Retained tuples tracked size',
     description=mvcc_warning(mvcc_retained_desc(mvcc_tracking_desc(total_desc))),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,

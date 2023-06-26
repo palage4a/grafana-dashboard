@@ -28,7 +28,7 @@ local prometheus = grafana.prometheus;
       A number of task tuples checked for expiration (expired + skipped).
       Graph shows mean tuples per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -45,7 +45,7 @@ local prometheus = grafana.prometheus;
       A number of task expired tuples.
       Graph shows mean tuples per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -62,7 +62,7 @@ local prometheus = grafana.prometheus;
       A number of task restarts since start.
       From the start is equal to 1.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -78,7 +78,7 @@ local prometheus = grafana.prometheus;
     description=|||
       A task's operation time.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,

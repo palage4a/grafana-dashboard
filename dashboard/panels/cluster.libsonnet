@@ -349,7 +349,7 @@ local prometheus = grafana.prometheus;
       Panel works with `cartridge >= 2.0.2`, `metrics >= 0.6.0`,
       while `metrics >= 0.9.0` is recommended for per instance display.
     |||,
-  ):: cartridge_issues(
+  ): cartridge_issues(
     cfg,
     title=title,
     description=description,
@@ -367,7 +367,7 @@ local prometheus = grafana.prometheus;
       Panel works with `cartridge >= 2.0.2`, `metrics >= 0.6.0`,
       while `metrics >= 0.9.0` is recommended for per instance display.
     |||,
-  ):: cartridge_issues(
+  ): cartridge_issues(
     cfg,
     title=title,
     description=description,
@@ -383,7 +383,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.15.0`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -403,7 +403,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.11.0` and Grafana 8.x.
     |||,
-  ):: timeseries.new(
+  ): timeseries.new(
     title=title,
     description=description,
     datasource=cfg.datasource,
@@ -440,7 +440,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with Grafana 8.x.
     |||),
-  ):: timeseries.new(
+  ): timeseries.new(
     title=title,
     description=description,
     datasource=cfg.datasource,
@@ -469,7 +469,7 @@ local prometheus = grafana.prometheus;
       If the value is 0, it means the node hasn’t
       voted in the current term yet.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -488,7 +488,7 @@ local prometheus = grafana.prometheus;
       If the value is 0, it means the node doesn’t know which
       node is the leader in the current term.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -505,7 +505,7 @@ local prometheus = grafana.prometheus;
     description=election_warning(|||
       Current election term.
     |||),
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,

@@ -15,7 +15,7 @@ local prometheus = grafana.prometheus;
     description=|||
       Memory used for network input/output buffers.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -50,7 +50,7 @@ local prometheus = grafana.prometheus;
       Data received by instance from binary protocol connections.
       Graph shows average bytes per second.
     |||,
-  ):: bytes_per_second_graph(
+  ): bytes_per_second_graph(
     cfg,
     title=title,
     description=description,
@@ -65,7 +65,7 @@ local prometheus = grafana.prometheus;
       Data sent by instance with binary protocol connections.
       Graph shows average bytes per second.
     |||,
-  ):: bytes_per_second_graph(
+  ): bytes_per_second_graph(
     cfg,
     title=title,
     description=description,
@@ -80,7 +80,7 @@ local prometheus = grafana.prometheus;
       Number of network requests this instance has handled.
       Graph shows mean rps.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -96,7 +96,7 @@ local prometheus = grafana.prometheus;
     description=|||
       Number of pending network requests.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -116,7 +116,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and `Tarantool >= 2.10-beta2`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -134,7 +134,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and `Tarantool >= 2.10-beta2`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -154,7 +154,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and `Tarantool >= 2.10-beta2`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -172,7 +172,7 @@ local prometheus = grafana.prometheus;
 
       Panel works with `metrics >= 0.13.0` and `Tarantool >= 2.10-beta2`.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -189,7 +189,7 @@ local prometheus = grafana.prometheus;
     description=|||
       Average number of new binary protocol connections per second.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -205,7 +205,7 @@ local prometheus = grafana.prometheus;
     description=|||
       Number of current active binary protocol connections.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -288,7 +288,7 @@ local prometheus = grafana.prometheus;
       separated per thread.
       Graph shows average bytes per second.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -306,7 +306,7 @@ local prometheus = grafana.prometheus;
       separated per thread.
       Graph shows average bytes per second.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -323,7 +323,7 @@ local prometheus = grafana.prometheus;
       Average number of new binary protocol connections per second,
       separated per thread.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -340,7 +340,7 @@ local prometheus = grafana.prometheus;
       Number of current active binary protocol connections,
       separated per thread.
     |||),
-  ):: per_thread_current_graph(
+  ): per_thread_current_graph(
     cfg,
     title=title,
     description=description,
@@ -358,7 +358,7 @@ local prometheus = grafana.prometheus;
       separated per thread.
       Graph shows mean rps.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -375,7 +375,7 @@ local prometheus = grafana.prometheus;
       Average number of requests processed per second,
       separated per thread.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -392,7 +392,7 @@ local prometheus = grafana.prometheus;
       Average number of requests which was placed in queues
       of streams per second, separated per thread.
     |||),
-  ):: per_thread_rate_graph(
+  ): per_thread_rate_graph(
     cfg,
     title=title,
     description=description,
@@ -409,7 +409,7 @@ local prometheus = grafana.prometheus;
       Number of pending network requests,
       separated per thread.
     |||),
-  ):: per_thread_current_graph(
+  ): per_thread_current_graph(
     cfg,
     title=title,
     description=description,
@@ -426,7 +426,7 @@ local prometheus = grafana.prometheus;
       Number of requests currently being processed,
       separated per thread.
     |||),
-  ):: per_thread_current_graph(
+  ): per_thread_current_graph(
     cfg,
     title=title,
     description=description,
@@ -443,7 +443,7 @@ local prometheus = grafana.prometheus;
       Number of requests currently waiting in queues of streams,
       separated per thread.
     |||),
-  ):: per_thread_current_graph(
+  ): per_thread_current_graph(
     cfg,
     title=title,
     description=description,

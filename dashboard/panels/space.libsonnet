@@ -48,7 +48,7 @@ local prometheus = grafana.prometheus;
       Number of records in the space (memtx engine).
       Name of space is specified after dash.
     |||,
-  ):: count(
+  ): count(
     cfg,
     title=title,
     description=description,
@@ -66,11 +66,11 @@ local prometheus = grafana.prometheus;
       to enable it you must set global variable
       include_vinyl_count to true. Beware that
       count() operation scans the space and may
-      slow down your app. 
+      slow down your app.
 
       Panel works with `metrics >= 0.13.0`.
     |||,
-  ):: count(
+  ): count(
     cfg,
     title=title,
     description=description,
@@ -124,7 +124,7 @@ local prometheus = grafana.prometheus;
         else null,
       ]
     ),
-  ):: bsize_memtx(
+  ): bsize_memtx(
     cfg,
     title=title,
     description=description,
@@ -140,7 +140,7 @@ local prometheus = grafana.prometheus;
       index name specified in parentheses.
       Includes both memtx and vinyl spaces.
     |||,
-  ):: common.default_graph(
+  ): common.default_graph(
     cfg,
     title=title,
     description=description,
@@ -177,7 +177,7 @@ local prometheus = grafana.prometheus;
         else null,
       ]
     ),
-  ):: bsize_memtx(
+  ): bsize_memtx(
     cfg,
     title=title,
     description=description,

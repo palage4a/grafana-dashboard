@@ -4,32 +4,77 @@ datasource: 'Prometheus (prod)'
 description: Dashboard for Tarantool application and database server monitoring, based on grafonnet library.
 grafana_tags: [tarantool]
 sections:
+  - cluster
   - replication
+  - cpu_extended
 
 title: UCP Tarantool Dashboard
 
 alerts:
-  replication_status:
-    name: test alert
-    for: 5m
-    frequency: 5m
-    message: test alert exploded
+  procstat_thread_user_time:
+    name: procstat_thread_user_time alert
+    for: 1h
+    frequency: 10m
+    message: procstat_thread_user_time alert exploded
     conditions:
       - evaluator:
           params:
             - 0.05
           type: gt
-          operator:
-            type: and
-          query:
-            params:
-              - A
-              - 10m
-              - now
-          reducer:
-            params:
-            type: avg
-          type: query # need default , it's dificult since conditions is a list
+        operator:
+          type: and
+        query:
+          params:
+            - A
+            - 10m
+            - now
+        reducer:
+          params:
+          type: avg
+        type: query # need default , it's dificult since conditions is a list
+  election_term:
+    name: election_term alert
+    for: 1h
+    frequency: 10m
+    message: eleaction_term alert exploded
+    conditions:
+      - evaluator:
+          params:
+            - 0.05
+          type: gt
+        operator:
+          type: and
+        query:
+          params:
+            - A
+            - 10m
+            - now
+        reducer:
+          params:
+          type: avg
+        type: query # need default , it's dificult since conditions is a list
+
+  replication_status:
+    name: replication_status alert
+    for: 5m
+    frequency: 5m
+    message: replication_status alert exploded
+    conditions:
+      - evaluator:
+          params:
+            - 0.05
+          type: gt
+        operator:
+          type: and
+        query:
+          params:
+            - A
+            - 10m
+            - now
+        reducer:
+          params:
+          type: avg
+        type: query # need default , it's dificult since conditions is a list
 
 
 
