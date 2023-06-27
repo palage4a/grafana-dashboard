@@ -109,4 +109,15 @@ local grid_width = 24;
 
       _panels[0:(len - 1):1] + [_panels[len - 1].addPanel(p, p.gridPos)]
   ), panels, []),
+
+  /**
+  It is polyfill for `std.objectKeysValues`
+  */
+  objectKeysValues(o)::
+    local keys = std.objectFields(o);
+    std.map(function(k) {key: k, value: o[k]}, keys),
+
+  objectKeysValuesAll(o)::
+    local keys = std.objectFieldsAll(o);
+    std.map(function(k) {key: k, value: o[k]}, keys)
 }

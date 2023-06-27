@@ -1,5 +1,6 @@
 local section = import 'dashboard/section.libsonnet';
 local variable = import 'dashboard/variable.libsonnet';
+local utils = import 'dashboard/utils.libsonnet';
 
 {
   local supported_types = {
@@ -134,10 +135,10 @@ local variable = import 'dashboard/variable.libsonnet';
         error std.format("ConfigurationError: %s configuration unknown field '%s'", [cfg.type, item.key])
       else
         assert_type(item.key, item.value, schema[item.key], "ConfigurationError: field '%s' expected type %s, got %s")
-      for item in std.objectKeysValues(cfg)
+      for item in utils.objectKeysValues(cfg)
     ] + std.flattenArrays([
       validate_filter(item.key, item.value)
-      for item in std.objectKeysValues(cfg.filters)
+      for item in utils.objectKeysValues(cfg.filters)
     ]) + [
       true
       for item in cfg.sections
@@ -150,7 +151,7 @@ local variable = import 'dashboard/variable.libsonnet';
     if std.all(_validate_fields(cfg, schema[cfg.type])) then cfg,
 
   local truncate_null_filters(cfg) =
-    cfg { filters: { [item.key]: item.value for item in std.objectKeysValues(cfg.filters) if item.value != null } },
+    cfg { filters: { [item.key]: item.value for item in utils.objectKeysValues(cfg.filters) if item.value != null } },
 
   prepare(cfg)::
     truncate_null_filters(validate_fields(fill_defaults(validate_basic(cfg)))),

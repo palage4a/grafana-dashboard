@@ -1,4 +1,5 @@
 local variable = import 'dashboard/variable.libsonnet';
+local utils = import 'dashboard/utils.libsonnet';
 
 local cluster = import 'dashboard/panels/cluster.libsonnet';
 local cpu = import 'dashboard/panels/cpu.libsonnet';
@@ -54,7 +55,7 @@ local buildSection(name, cfg) =
                 ss.value(cfg).addAlert(cfg.alerts[ss.key])
               else
                 ss.value(cfg),
-            std.objectKeysValues(s));
+            utils.objectKeysValues(s));
 
 local getPrometheusPanels(cfg) =
   if cfg.type == variable.datasource_type.prometheus then [

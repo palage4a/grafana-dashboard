@@ -1,6 +1,7 @@
 local grafana = import 'grafonnet/grafana.libsonnet';
 
 local variable = import 'dashboard/variable.libsonnet';
+local utils = import 'dashboard/utils.libsonnet';
 
 local influxdb = grafana.influxdb;
 local prometheus = grafana.prometheus;
@@ -134,5 +135,5 @@ local influxdb_query_filters(filters) = std.join(' AND ', std.map(
       description,
 
   remove_field(obj, key)::
-    { [item.key]: item.value for item in std.objectKeysValuesAll(obj) if item.key != key },
+    { [item.key]: item.value for item in utils.objectKeysValuesAll(obj) if item.key != key },
 }
